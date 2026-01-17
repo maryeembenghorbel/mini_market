@@ -95,7 +95,15 @@ def on_login():
 
     elif role == "vendeur":
         messagebox.showinfo("Succès", "Connecté en tant que Vendeur")
+<<<<<<< HEAD
         # ici tu appelleras plus tard VendeurDashboard(user_id=user_id)
+=======
+        app.withdraw()
+        vendeur_win = VendeurDashboard(user_id=user_id, username=username)
+        vendeur_win.mainloop()
+
+
+>>>>>>> 2b6e9f1 (Add my updates to mini_market project)
 
     else:
         messagebox.showerror("Erreur", "Nom d'utilisateur ou mot de passe incorrect")

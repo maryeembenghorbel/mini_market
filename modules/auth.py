@@ -4,7 +4,7 @@ import os
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 from password_utils import check_password
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'database')))
-from db_conection import get_connection
+from db_connection import get_connection
 
 
 def login(username, password):
