@@ -1,6 +1,7 @@
 
 
-from database.db_conection import get_connection
+
+from database.db_connection import get_connection
 
 def get_all_products():
     conn = get_connection()
@@ -52,3 +53,23 @@ def product_exists_by_name(nom):
     row = cursor.fetchone()
     conn.close()
     return row is not None
+
+
+def get_produits_en_stock():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM produits WHERE quantite > 0")
+    result = cursor.fetchone()[0]
+    cursor.close()
+    conn.close()
+    return result
+
+
+def get_produits_en_rupture():
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM produits WHERE quantite = 0")
+    result = cursor.fetchone()[0]
+    cursor.close()
+    conn.close()
+    return result

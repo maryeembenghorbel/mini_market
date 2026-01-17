@@ -7,7 +7,8 @@ from password_utils import check_password, hash_password
 
 # Ajouter le dossier database pour db_connection
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'database')))
-from db_conection import get_connection
+
+from db_connection import get_connection
 
 # Connexion MySQL
 conn = get_connection()
